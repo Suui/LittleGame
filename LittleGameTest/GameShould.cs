@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using FluentAssertions;
+﻿using FluentAssertions;
+using GameApplication;
+using LittleGame;
 using NUnit.Framework;
 
 /* TODO
@@ -34,50 +34,5 @@ namespace LittleGameTest
 			game.CurrentTurn.Should().Be(0);
 			game.Player.Enemies.Count.Should().Be(2);
 		}
-	}
-
-	public class Game
-	{
-		public Player Player { get; set; }
-		public int CurrentTurn { get; set; }
-
-		public void Start()
-		{
-			CurrentTurn = 0;
-
-			Player = new Player("Any Player");
-			Player.Enemies.Add(new Player("Any Enemy"));
-			Player.Enemies.Add(new Player("Any Enemy"));
-		}
-	}
-
-	public class Player
-	{
-		private string Name { get; }
-		public EnemyList Enemies { get; set; } = new EnemyList();
-		public decimal Health { get; set; }
-
-		public Player(string name)
-		{
-			Name = name;
-			Health = 1000;
-		}
-
-		public void ReceiveDamage(int amount) => Health = Math.Max(Health - amount, 0);
-
-		public bool IsDead() => Health == 0;
-
-		public void ReceiveHealing(int amount)
-		{
-			Health += amount;
-		}
-	}
-
-	public class EnemyList
-	{
-		private List<Player> enemies { get; } = new List<Player>();
-		public int Count => enemies.Count;
-
-		public void Add(Player player) => enemies.Add(player);
 	}
 }

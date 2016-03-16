@@ -61,7 +61,7 @@ namespace GameApplication
 				return;
 			}
 
-			Console.WriteLine(Player.ToString() + "\n");
+			Console.WriteLine(Player + "\n");
 			Console.WriteLine("Enemies: ");
 			foreach (var enemy in Player.Enemies)
 				Console.WriteLine(enemy.ToString());

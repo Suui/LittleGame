@@ -6,15 +6,15 @@ namespace LittleGame
 {
 	public class EnemyList : IEnumerable
 	{
-		private Dictionary<string, Player> enemies { get; } = new Dictionary<string, Player>();
-		public int Count => enemies.Count;
+		private Dictionary<string, Player> Enemies { get; } = new Dictionary<string, Player>();
+		public int Count => Enemies.Count;
 
-		public void Add(Player player) => enemies.Add(player.Name, player);
+		public void Add(Player player) => Enemies.Add(player.Name, player);
 
-		public Player this[string name] => enemies[name];
+		public Player this[string name] => Enemies[name];
 
-		public IEnumerator GetEnumerator() => enemies.Values.GetEnumerator();
+		public IEnumerator GetEnumerator() => Enemies.Values.GetEnumerator();
 
-		public void Remove(string name) => enemies.Remove(name);
+		public void Remove(string name) => Enemies.Remove(name);
 	}
 }

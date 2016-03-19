@@ -7,12 +7,9 @@ namespace GameApplication
 	public class Game
 	{
 		public Player Player { get; set; }
-		public int CurrentTurn { get; set; }
 
 		public void Start()
 		{
-			CurrentTurn = 0;
-
 			Player = new Player("Player 1");
 			Player.Enemies.Add(new Player("Miguel"));
 			Player.Enemies.Add(new Player("Dani"));
@@ -28,7 +25,7 @@ namespace GameApplication
 				ParseInput();
 				foreach (Player enemy in Player.Enemies)
 				{
-					if (enemy.NextTurn == CurrentTurn) enemy.Attack(Player, enemy.AttackDamage);
+					enemy.Attack(Player, enemy.AttackDamage);
 				}
 				DisplayStats();
 			}

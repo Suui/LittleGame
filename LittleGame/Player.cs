@@ -12,7 +12,6 @@ namespace LittleGame
 		public string Name { get; }
 		public decimal Health { get; set; }
 		public decimal Mana { get; set; }
-		public int NextTurn { get; }
 		public decimal AttackDamage { get; set; }
 		public EnemyList Enemies { get; set; }
 
@@ -21,7 +20,6 @@ namespace LittleGame
 			Name = name;
 			Health = MaximumHealth;
 			Mana = MaximumMana;
-			NextTurn = 0;
 			AttackDamage = 210;
 			Enemies = new EnemyList();
 		}

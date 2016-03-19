@@ -2,9 +2,6 @@
 using LittleGame;
 using NUnit.Framework;
 
-/* TODO
-	
-*/
 
 namespace LittleGameTest
 {
